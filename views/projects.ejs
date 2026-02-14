@@ -1,0 +1,136 @@
+<% const page = 'projects'; const pageTitle = 'Projects'; %>
+<%- include('header') %>
+
+<!-- Projects Section -->
+<section class="section pt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="section-title">My <span class="gradient-text">Projects</span></h1>
+    <p class="text-gray-light mt-4 mb-12 max-w-3xl text-lg">
+      Here's a collection of my recent work, showcasing full-stack web development, 
+      machine learning applications, and system design projects.
+    </p>
+    
+    <!-- Projects Grid -->
+    <div class="space-y-12">
+      <% data.projects.forEach((project, index) => { %>
+        <div class="card" style="animation-delay: <%= index * 0.1 %>s;">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Project Image Placeholder -->
+            <div class="lg:col-span-1">
+              <div class="aspect-video bg-gradient-to-br from-maroon-dark to-maroon rounded-lg flex items-center justify-center">
+                <i class="fas fa-code text-6xl opacity-30"></i>
+              </div>
+            </div>
+            
+            <!-- Project Details -->
+            <div class="lg:col-span-2">
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <h2 class="text-3xl font-bold mb-2"><%= project.name %></h2>
+                  <p class="text-maroon-light font-semibold"><%= project.subtitle %></p>
+                </div>
+                <% if (project.url) { %>
+                  <a href="<%= project.url %>" target="_blank" 
+                     class="btn-primary text-sm px-4 py-2">
+                    <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                  </a>
+                <% } %>
+              </div>
+              
+              <p class="text-gray-light leading-relaxed mb-6">
+                <%= project.description %>
+              </p>
+              
+              <!-- Technologies Used -->
+              <div class="mb-4">
+                <h3 class="text-sm font-semibold text-maroon-light mb-3">
+                  <i class="fas fa-tools mr-2"></i> Technologies Used
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <% project.tech.forEach(tech => { %>
+                    <span class="px-4 py-2 bg-gray-dark border border-maroon/30 rounded-full text-sm hover:bg-maroon-dark transition">
+                      <%= tech %>
+                    </span>
+                  <% }); %>
+                </div>
+              </div>
+              
+              <!-- Project Highlights -->
+              <div class="mt-6">
+                <h3 class="text-sm font-semibold text-maroon-light mb-3">
+                  <i class="fas fa-star mr-2"></i> Key Features
+                </h3>
+                <ul class="space-y-2">
+                  <% if (project.name === 'RoktoDan BD') { %>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Secure user authentication system for donors and recipients</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Real-time donor search with location-based filtering</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Comprehensive profile management dashboard</span>
+                    </li>
+                  <% } else if (project.name.includes('Dengue')) { %>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Historical data analysis using ML algorithms</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Trend identification for outbreak prediction</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Data visualization for better insights</span>
+                    </li>
+                  <% } else if (project.name.includes('Himaagar')) { %>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Innovative platform connecting farmers with storage facilities</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Optimized database schema for efficient operations</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Supply chain logistics optimization</span>
+                    </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+    
+    <!-- GitHub CTA -->
+    <div class="mt-16">
+      <div class="card bg-gradient-to-br from-maroon-dark to-black text-center">
+        <i class="fab fa-github text-6xl mb-4 opacity-50"></i>
+        <h3 class="text-3xl font-bold mb-4">More Projects on GitHub</h3>
+        <p class="text-gray-light mb-6 max-w-2xl mx-auto">
+          Explore more of my work, contributions, and open-source projects on GitHub.
+        </p>
+        <a href="https://github.com/<%= data.contact.github %>" target="_blank" class="btn-primary">
+          <i class="fab fa-github mr-2"></i> Visit My GitHub
+        </a>
+      </div>
+    </div>
+    
+    <!-- Contact CTA -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-light text-lg mb-4">Interested in collaborating on a project?</p>
+      <a href="/contact" class="btn-primary">
+        Let's Talk
+      </a>
+    </div>
+  </div>
+</section>
+
+<%- include('footer') %>

@@ -1,0 +1,186 @@
+<% const page = 'skills'; const pageTitle = 'Skills'; %>
+<%- include('header') %>
+
+<!-- Skills Section -->
+<section class="section pt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="section-title">Technical <span class="gradient-text">Skills</span></h1>
+    <p class="text-gray-light mt-4 mb-12 max-w-3xl text-lg">
+      A comprehensive overview of my technical expertise across various domains of software development.
+    </p>
+    
+    <!-- Programming Languages -->
+    <div class="mb-16">
+      <div class="flex items-center mb-8">
+        <i class="fas fa-code text-4xl text-maroon-light mr-4"></i>
+        <h2 class="text-3xl font-bold">Programming Languages</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <% data.skills.languages.forEach((skill, index) => { %>
+          <div class="skill-item" style="animation-delay: <%= index * 0.05 %>s;">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold text-lg"><%= skill %></span>
+              <i class="fas fa-chevron-right text-maroon-light"></i>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <!-- Frameworks & Libraries -->
+    <div class="mb-16">
+      <div class="flex items-center mb-8">
+        <i class="fas fa-layer-group text-4xl text-maroon-light mr-4"></i>
+        <h2 class="text-3xl font-bold">Frameworks & Libraries</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <% data.skills.frameworks.forEach((skill, index) => { %>
+          <div class="card text-center" style="animation-delay: <%= index * 0.05 %>s;">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-maroon-dark flex items-center justify-center">
+              <i class="fas fa-cube text-2xl text-maroon-light"></i>
+            </div>
+            <h3 class="font-semibold text-lg"><%= skill %></h3>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <!-- Software Engineering -->
+    <div class="mb-16">
+      <div class="flex items-center mb-8">
+        <i class="fas fa-cogs text-4xl text-maroon-light mr-4"></i>
+        <h2 class="text-3xl font-bold">Software Engineering</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <% data.skills.softwareEngineering.forEach((skill, index) => { %>
+          <div class="card" style="animation-delay: <%= index * 0.05 %>s;">
+            <div class="flex items-center">
+              <div class="w-12 h-12 rounded-lg bg-maroon-dark flex items-center justify-center mr-4">
+                <i class="fas fa-check text-maroon-light"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg"><%= skill %></h3>
+                <% if (skill === 'OOP') { %>
+                  <p class="text-gray-light text-sm">Object-Oriented Programming</p>
+                <% } else if (skill === 'SDLC') { %>
+                  <p class="text-gray-light text-sm">Software Development Life Cycle</p>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <!-- Data Management -->
+    <div class="mb-16">
+      <div class="flex items-center mb-8">
+        <i class="fas fa-database text-4xl text-maroon-light mr-4"></i>
+        <h2 class="text-3xl font-bold">Data Management</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <% data.skills.dataManagement.forEach((skill, index) => { %>
+          <div class="skill-item" style="animation-delay: <%= index * 0.05 %>s;">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold text-lg"><%= skill %></span>
+              <i class="fas fa-database text-maroon-light"></i>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <!-- Version Control -->
+    <div class="mb-16">
+      <div class="flex items-center mb-8">
+        <i class="fab fa-git-alt text-4xl text-maroon-light mr-4"></i>
+        <h2 class="text-3xl font-bold">Version Control</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <% data.skills.versionControl.forEach((skill, index) => { %>
+          <div class="card" style="animation-delay: <%= index * 0.05 %>s;">
+            <div class="flex items-center">
+              <div class="w-12 h-12 rounded-lg bg-maroon-dark flex items-center justify-center mr-4">
+                <i class="fab fa-github text-maroon-light text-2xl"></i>
+              </div>
+              <h3 class="font-semibold text-lg"><%= skill %></h3>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <!-- Deployment & DevOps -->
+    <div class="mb-16">
+      <div class="flex items-center mb-8">
+        <i class="fas fa-cloud-upload-alt text-4xl text-maroon-light mr-4"></i>
+        <h2 class="text-3xl font-bold">Deployment & DevOps</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <% data.skills.deployment.forEach((skill, index) => { %>
+          <div class="skill-item" style="animation-delay: <%= index * 0.05 %>s;">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold text-lg"><%= skill %></span>
+              <i class="fas fa-server text-maroon-light"></i>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <!-- API & Connectivity -->
+    <div class="mb-16">
+      <div class="flex items-center mb-8">
+        <i class="fas fa-plug text-4xl text-maroon-light mr-4"></i>
+        <h2 class="text-3xl font-bold">API & Connectivity</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <% data.skills.connectivity.forEach((skill, index) => { %>
+          <div class="card" style="animation-delay: <%= index * 0.05 %>s;">
+            <div class="flex items-center">
+              <div class="w-12 h-12 rounded-lg bg-maroon-dark flex items-center justify-center mr-4">
+                <i class="fas fa-exchange-alt text-maroon-light"></i>
+              </div>
+              <h3 class="font-semibold text-lg"><%= skill %></h3>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <!-- Skill Summary Card -->
+    <div class="mt-16">
+      <div class="card bg-gradient-to-br from-maroon-dark to-black">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <div class="text-5xl font-bold gradient-text mb-2"><%= data.skills.languages.length %></div>
+            <p class="text-gray-light">Programming Languages</p>
+          </div>
+          <div>
+            <div class="text-5xl font-bold gradient-text mb-2"><%= data.skills.frameworks.length %></div>
+            <p class="text-gray-light">Frameworks & Tools</p>
+          </div>
+          <div>
+            <div class="text-5xl font-bold gradient-text mb-2"><%= Object.keys(data.skills).length %></div>
+            <p class="text-gray-light">Skill Categories</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-light text-lg mb-4">Want to see these skills in action?</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/projects" class="btn-primary">
+          View Projects
+        </a>
+        <a href="/contact" class="btn-primary" style="background: transparent; border: 2px solid var(--maroon);">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('footer') %>

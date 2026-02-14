@@ -1,0 +1,136 @@
+<% const page = 'about'; const pageTitle = 'About'; %>
+<%- include('header') %>
+
+<!-- About Section -->
+<section class="section pt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+      <!-- Image/Avatar -->
+      <div class="float">
+        <div class="card p-0 overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-maroon-dark to-maroon flex items-center justify-center">
+            <img src="/images/profile.jpg" alt="Bokhtear Md Abid">
+          </div>
+        </div>
+      </div>
+      
+      <!-- About Text -->
+      <div>
+        <h1 class="section-title">About <span class="gradient-text">Me</span></h1>
+        <p class="text-gray-light mt-8 mb-6 leading-relaxed text-lg">
+          <%= data.profile %>
+        </p>
+        
+        <div class="grid grid-cols-2 gap-6 mt-8">
+          <div>
+            <h3 class="text-maroon-light font-semibold mb-2">
+              <i class="fas fa-user mr-2"></i> Name
+            </h3>
+            <p class="text-gray-light"><%= data.name %></p>
+          </div>
+          <div>
+            <h3 class="text-maroon-light font-semibold mb-2">
+              <i class="fas fa-briefcase mr-2"></i> Role
+            </h3>
+            <p class="text-gray-light"><%= data.title %></p>
+          </div>
+          <div>
+            <h3 class="text-maroon-light font-semibold mb-2">
+              <i class="fas fa-envelope mr-2"></i> Email
+            </h3>
+            <p class="text-gray-light"><%= data.contact.email %></p>
+          </div>
+          <div>
+            <h3 class="text-maroon-light font-semibold mb-2">
+              <i class="fas fa-map-marker-alt mr-2"></i> Location
+            </h3>
+            <p class="text-gray-light">Dhaka, Bangladesh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Education Section -->
+    <div class="mt-20">
+      <h2 class="section-title">Education</h2>
+      <div class="mt-8 space-y-6">
+        <% data.education.forEach((edu, index) => { %>
+          <div class="card" style="animation-delay: <%= index * 0.1 %>s;">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+              <div class="flex-1">
+                <h3 class="text-2xl font-bold mb-2"><%= edu.degree %></h3>
+                <p class="text-maroon-light font-semibold mb-2">
+                  <i class="fas fa-university mr-2"></i><%= edu.institution %>
+                </p>
+                <% if (edu.status) { %>
+                  <p class="text-gray-light text-sm mb-2"><%= edu.status %></p>
+                <% } %>
+              </div>
+              <div class="mt-4 md:mt-0">
+                <span class="px-4 py-2 bg-maroon-dark rounded-full text-sm font-semibold">
+                  <%= edu.year %>
+                </span>
+              </div>
+            </div>
+            
+            <div class="flex items-center space-x-4 mt-4">
+              <% if (edu.gpa) { %>
+                <div class="flex items-center">
+                  <i class="fas fa-graduation-cap text-maroon-light mr-2"></i>
+                  <span class="text-gray-light">GPA: <strong class="text-white"><%= edu.gpa %></strong></span>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <!-- Certifications Section -->
+    <div class="mt-20">
+      <h2 class="section-title">Certifications & <span class="gradient-text">Training</span></h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <% data.certifications.forEach((cert, index) => { %>
+          <div class="card flex items-center" style="animation-delay: <%= index * 0.1 %>s;">
+            <div class="w-12 h-12 rounded-full bg-maroon-dark flex items-center justify-center mr-4 flex-shrink-0">
+              <i class="fas fa-certificate text-maroon-light"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold"><%= cert %></h3>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <!-- Languages Section -->
+    <div class="mt-20">
+      <h2 class="section-title">Languages</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <% data.languages.forEach((lang, index) => { %>
+          <div class="card" style="animation-delay: <%= index * 0.1 %>s;">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center">
+                <i class="fas fa-language text-maroon-light text-2xl mr-4"></i>
+                <span class="font-semibold text-lg"><%= lang %></span>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    <!-- CTA -->
+    <div class="mt-20 text-center">
+      <div class="card bg-gradient-to-br from-maroon-dark to-black">
+        <h3 class="text-3xl font-bold mb-4">Interested in working together?</h3>
+        <p class="text-gray-light mb-6">Let's connect and discuss how I can contribute to your projects.</p>
+        <a href="/contact" class="btn-primary">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('footer') %>

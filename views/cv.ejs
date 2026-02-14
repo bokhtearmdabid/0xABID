@@ -1,0 +1,169 @@
+<% const page = 'cv'; const pageTitle = 'Download CV'; %>
+<%- include('header') %>
+
+<!-- CV Section -->
+<section class="section pt-24">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h1 class="section-title inline-block">Download My <span class="gradient-text">CV</span></h1>
+      <p class="text-gray-light mt-4 text-lg max-w-2xl mx-auto">
+        Get a comprehensive overview of my education, experience, and skills
+      </p>
+    </div>
+    
+    <!-- CV Preview Card -->
+    <div class="card mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <!-- CV Preview -->
+        <div class="relative">
+          <div class="aspect-[8.5/11] bg-gradient-to-br from-gray-dark to-gray-medium rounded-lg border-2 border-maroon/30 flex items-center justify-center overflow-hidden">
+            <!-- CV Icon/Preview -->
+            <div class="text-center p-8">
+              <i class="fas fa-file-pdf text-8xl text-maroon-light mb-4"></i>
+              <h3 class="text-2xl font-bold mb-2">Bokhtear Md Abid</h3>
+              <p class="text-gray-light">Junior Full-Stack Web Developer</p>
+              <div class="mt-6 space-y-2 text-sm text-gray-light">
+                <p><i class="fas fa-graduation-cap mr-2 text-maroon-light"></i> B.Sc. in CSE</p>
+                <p><i class="fas fa-code mr-2 text-maroon-light"></i> <%= Object.keys(data.skills).length %>+ Technical Skills</p>
+                <p><i class="fas fa-project-diagram mr-2 text-maroon-light"></i> <%= data.projects.length %>+ Projects</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CV Details -->
+        <div>
+          <h2 class="text-3xl font-bold mb-4">Curriculum Vitae</h2>
+          <p class="text-gray-light mb-6 leading-relaxed">
+            Download my complete CV to learn more about my background, technical expertise, 
+            projects, and professional experience. The CV includes detailed information about 
+            my education, skills, certifications, and achievements.
+          </p>
+          
+          <!-- CV Highlights -->
+          <div class="space-y-3 mb-8">
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-maroon-light mr-3 mt-1"></i>
+              <div>
+                <h4 class="font-semibold">Complete Professional Profile</h4>
+                <p class="text-sm text-gray-light">Comprehensive overview of experience and expertise</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-maroon-light mr-3 mt-1"></i>
+              <div>
+                <h4 class="font-semibold">Technical Skills Breakdown</h4>
+                <p class="text-sm text-gray-light">Detailed listing of programming languages and frameworks</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-maroon-light mr-3 mt-1"></i>
+              <div>
+                <h4 class="font-semibold">Project Portfolio</h4>
+                <p class="text-sm text-gray-light">Showcase of real-world applications and solutions</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-check-circle text-maroon-light mr-3 mt-1"></i>
+              <div>
+                <h4 class="font-semibold">Education & Certifications</h4>
+                <p class="text-sm text-gray-light">Academic background and professional training</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Download Button -->
+          <a href="/download/cv" class="btn-primary inline-block">
+            <i class="fas fa-download mr-2"></i> Download CV (PDF)
+          </a>
+          
+          <p class="text-sm text-gray-light mt-4">
+            <i class="fas fa-info-circle mr-1"></i> PDF format • Updated February 2026
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CV Contents Preview -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <!-- What's Inside Card 1 -->
+      <div class="card">
+        <div class="flex items-start">
+          <div class="w-12 h-12 rounded-lg bg-maroon-dark flex items-center justify-center mr-4 flex-shrink-0">
+            <i class="fas fa-user text-xl text-maroon-light"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Personal Information</h3>
+            <p class="text-gray-light text-sm">Contact details and professional summary</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- What's Inside Card 2 -->
+      <div class="card">
+        <div class="flex items-start">
+          <div class="w-12 h-12 rounded-lg bg-maroon-dark flex items-center justify-center mr-4 flex-shrink-0">
+            <i class="fas fa-graduation-cap text-xl text-maroon-light"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Education</h3>
+            <p class="text-gray-light text-sm">Academic qualifications and achievements</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- What's Inside Card 3 -->
+      <div class="card">
+        <div class="flex items-start">
+          <div class="w-12 h-12 rounded-lg bg-maroon-dark flex items-center justify-center mr-4 flex-shrink-0">
+            <i class="fas fa-code text-xl text-maroon-light"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Technical Skills</h3>
+            <p class="text-gray-light text-sm">Programming languages, frameworks, and tools</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- What's Inside Card 4 -->
+      <div class="card">
+        <div class="flex items-start">
+          <div class="w-12 h-12 rounded-lg bg-maroon-dark flex items-center justify-center mr-4 flex-shrink-0">
+            <i class="fas fa-project-diagram text-xl text-maroon-light"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-2">Projects</h3>
+            <p class="text-gray-light text-sm">Portfolio of completed work and applications</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Alternative Actions -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="card bg-gradient-to-br from-maroon-dark to-black text-center">
+        <i class="fas fa-eye text-4xl mb-4 text-maroon-light"></i>
+        <h3 class="text-xl font-bold mb-2">View Online</h3>
+        <p class="text-gray-light text-sm mb-4">
+          Prefer to view my credentials online?
+        </p>
+        <a href="/about" class="btn-primary" style="background: transparent; border: 2px solid var(--maroon);">
+          View Profile
+        </a>
+      </div>
+      
+      <div class="card bg-gradient-to-br from-maroon-dark to-black text-center">
+        <i class="fas fa-envelope text-4xl mb-4 text-maroon-light"></i>
+        <h3 class="text-xl font-bold mb-2">Get In Touch</h3>
+        <p class="text-gray-light text-sm mb-4">
+          Want to discuss opportunities?
+        </p>
+        <a href="/contact" class="btn-primary" style="background: transparent; border: 2px solid var(--maroon);">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('footer') %>
