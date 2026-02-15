@@ -33,6 +33,21 @@ const portfolioData = {
       tech: ['Django', 'HTML5', 'CSS3', 'Render']
     },
     {
+      name: 'Rannaghore Protidin',
+      subtitle: 'E-Commerce Web Platform',
+      url: 'https://rannaghore-protidin.onrender.com/',
+      description: 'Developed a fully functional e-commerce platform for selling baking supplies and household essentials. Includes user-friendly product browsing, cart system, order management, and responsive design for seamless shopping across devices.',
+      tech: ['Django', 'HTML5', 'CSS3', 'Neon SQL', 'Render']
+    },
+    {
+      name: 'HUMMI',
+      subtitle: 'Social Communication App',
+      url: 'https://github.com/bokhtearmdabid/HUMMI-Social_Communication_App',
+      description: 'Built a TypeScript-based social communication app that enables users to match and connect with others based on mutual interest. Features include user profile creation, swipe-style matching system, real-time interaction logic, and clean modular architecture for scalability.',
+      tech: ['TypeScript', 'React Native', 'Expo', 'Firebase', 'Firestore DB']
+    },
+
+    {
       name: 'Prediction of Dengue Cases in Bangladesh',
       subtitle: 'Machine Learning & Python',
       description: 'Designed a predictive model to analyze historical data and forecast Dengue outbreaks in Bangladesh. Applied Machine Learning algorithms to identify trends, aiding in proactive public health measures.',
