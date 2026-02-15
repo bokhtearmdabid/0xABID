@@ -95,9 +95,9 @@
       Explore my recent work showcasing full-stack development, machine learning, and system design.
     </p>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <% data.projects.forEach((project, index) => { %>
-        <div class="card" style="animation-delay: <%= index * 0.1 %>s;">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <% data.projects.slice(0, 2).forEach((project, index) => { %>
+        <div class="card fade-in-up" style="animation-delay: <%= index * 0.1 %>s;">
           <div class="mb-4">
             <h3 class="text-2xl font-bold mb-2"><%= project.name %></h3>
             <p class="text-maroon-light text-sm font-semibold"><%= project.subtitle %></p>
@@ -127,7 +127,7 @@
     
     <div class="text-center mt-12">
       <a href="/projects" class="btn-primary">
-        View All Projects
+        View All <%= data.projects.length %> Projects
       </a>
     </div>
   </div>
