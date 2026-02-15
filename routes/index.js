@@ -30,34 +30,38 @@ const portfolioData = {
       subtitle: 'Full-Stack Web Platform',
       url: 'https://roktodanbd.onrender.com/',
       description: 'Built a fully functional platform to bridge the gap between blood donors and patients in critical need. Features include secure user authentication (Donor & Recipient), real-time donor search, and profile management.',
-      tech: ['Django', 'HTML5', 'CSS3', 'Render']
+      tech: ['Django', 'HTML5', 'CSS3', 'Render'],
+      image: "/images/projects/roktodanbd.png"
     },
     {
       name: 'Rannaghore Protidin',
       subtitle: 'E-Commerce Web Platform',
       url: 'https://rannaghore-protidin.onrender.com/',
       description: 'Developed a fully functional e-commerce platform for selling baking supplies and household essentials. Includes user-friendly product browsing, cart system, order management, and responsive design for seamless shopping across devices.',
-      tech: ['Django', 'HTML5', 'CSS3', 'Neon SQL', 'Render']
+      tech: ['Django', 'HTML5', 'CSS3', 'Neon SQL', 'Render'],
+      image: "/images/projects/rannaghoreprotidin.png"
     },
     {
       name: 'HUMMI',
       subtitle: 'Social Communication App',
       url: 'https://github.com/bokhtearmdabid/HUMMI-Social_Communication_App',
       description: 'Built a TypeScript-based social communication app that enables users to match and connect with others based on mutual interest. Features include user profile creation, swipe-style matching system, real-time interaction logic, and clean modular architecture for scalability.',
-      tech: ['TypeScript', 'React Native', 'Expo', 'Firebase', 'Firestore DB']
+      tech: ['TypeScript', 'React Native', 'Expo', 'Firebase', 'Firestore DB'],
+      image: "/images/projects/hummi_app.png"
     },
 
     {
       name: 'Prediction of Dengue Cases in Bangladesh',
       subtitle: 'Machine Learning & Python',
       description: 'Designed a predictive model to analyze historical data and forecast Dengue outbreaks in Bangladesh. Applied Machine Learning algorithms to identify trends, aiding in proactive public health measures.',
-      tech: ['Python', 'Scikit-learn', 'Pandas', 'Data Visualization']
+      tech: ['Python', 'Scikit-learn', 'Pandas', 'Data Visualization'],
     },
     {
       name: 'Himaagar-Share',
       subtitle: 'Cold Storage Solution | System Analysis & Design',
       description: 'Conceptualized an "Airbnb-style" platform connecting farmers with available cold storage to reduce agricultural waste. Designed the system architecture and database schema to optimize supply chain logistics.',
-      tech: ['System Design', 'Database Architecture']
+      tech: ['System Design', 'Database Architecture'],
+      image: "/images/projects/himaagarshare.png"
     }
   ],
   education: [
