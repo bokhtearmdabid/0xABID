@@ -1,6 +1,33 @@
 <% const page = 'contact'; const pageTitle = 'Contact'; %>
 <%- include('header') %>
 
+<style>
+/* Ensure form inputs are clickable and editable */
+#contactForm input,
+#contactForm textarea {
+  pointer-events: auto !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  cursor: text !important;
+  position: relative;
+  z-index: 10;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: none;
+  border-color: var(--maroon-light, #c77dff);
+}
+
+/* Ensure the card doesn't block interactions */
+#contactForm .card,
+#contactForm {
+  pointer-events: auto !important;
+}
+</style>
+
 <!-- Contact Section -->
 <section class="section pt-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,8 +124,9 @@
                 id="name" 
                 name="name" 
                 required
-                class="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg focus:border-maroon-light focus:outline-none text-white transition"
-                placeholder="John Doe"
+                style="pointer-events: auto; user-select: text; -webkit-user-select: text;"
+                class="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg focus:border-maroon-light focus:outline-none transition text-black"
+                placeholder="Please enter your name here"
               >
             </div>
             
@@ -112,8 +140,9 @@
                 id="email" 
                 name="email" 
                 required
-                class="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg focus:border-maroon-light focus:outline-none text-white transition"
-                placeholder="john@example.com"
+                style="pointer-events: auto; user-select: text; -webkit-user-select: text;"
+                class="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg focus:border-maroon-light focus:outline-none text-black transition"
+                placeholder="yourmail@example.com"
               >
             </div>
             
@@ -127,7 +156,8 @@
                 id="subject" 
                 name="subject" 
                 required
-                class="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg focus:border-maroon-light focus:outline-none text-white transition"
+                style="pointer-events: auto; user-select: text; -webkit-user-select: text;"
+                class="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg focus:border-maroon-light focus:outline-none text-black transition"
                 placeholder="Project Inquiry"
               >
             </div>
@@ -142,7 +172,8 @@
                 name="message" 
                 rows="6" 
                 required
-                class="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg focus:border-maroon-light focus:outline-none text-white transition resize-none"
+                style="pointer-events: auto; user-select: text; -webkit-user-select: text;"
+                class="w-full px-4 py-3 bg-gray-dark border border-gray-medium rounded-lg focus:border-maroon-light focus:outline-none text-black transition resize-none"
                 placeholder="Tell me about your project or inquiry..."
               ></textarea>
             </div>
@@ -186,7 +217,7 @@
 </section>
 
 <script>
-// Contact Form Handler
+// Contact Form Handler - Backend submission
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   
@@ -207,7 +238,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   };
   
   try {
-    // Send request
+    // Send request to backend
     const response = await fetch('/contact', {
       method: 'POST',
       headers: {
@@ -238,6 +269,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     }
     
   } catch (error) {
+    console.error('Contact form error:', error);
     formMessage.classList.remove('hidden');
     formMessage.classList.add('bg-red-500');
     formMessage.innerHTML = `
@@ -254,6 +286,22 @@ document.getElementById('contactForm').addEventListener('submit', async function
       formMessage.classList.add('hidden');
     }, 5000);
   }
+});
+
+// Copy email to clipboard functionality
+document.querySelectorAll('.copy-email').forEach(element => {
+  element.addEventListener('click', function(e) {
+    e.preventDefault();
+    const email = this.textContent.trim();
+    navigator.clipboard.writeText(email).then(() => {
+      // Show copied notification
+      const originalText = this.textContent;
+      this.textContent = 'Copied!';
+      setTimeout(() => {
+        this.textContent = originalText;
+      }, 2000);
+    });
+  });
 });
 </script>
 
