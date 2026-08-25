@@ -18,7 +18,7 @@
       <!-- Project Image -->
       <div class="lg:col-span-1">
         <% if (project.image) { %>
-          <div class="aspect-1 rounded-lg overflow-hidden">
+          <div class="aspect-square rounded-lg overflow-hidden">
             <img src="<%= project.image %>" 
                 alt="<%= project.name %>" 
                 class="w-full h-full object-cover hover:scale-105 transition duration-300">
@@ -107,6 +107,19 @@
                     <li class="flex items-start">
                       <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
                       <span class="text-gray-light">Supply chain logistics optimization</span>
+                    </li>
+                  <% } else if (project.name.includes('Onggoshree')) { %>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Full-stack skincare e-commerce app with React Native (Expo) and a Node/Express/MongoDB backend</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Real Skin AI analysis with live camera capture and personalized routine recommendations</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-check text-maroon-light mr-2 mt-1"></i>
+                      <span class="text-gray-light">Glow Club loyalty program with tier progression and atomic point-based reward redemption</span>
                     </li>
                   <% } %>
                 </ul>

@@ -62,6 +62,14 @@ const portfolioData = {
       description: 'Conceptualized an "Airbnb-style" platform connecting farmers with available cold storage to reduce agricultural waste. Designed the system architecture and database schema to optimize supply chain logistics.',
       tech: ['System Design', 'Database Architecture'],
       image: "/images/projects/himaagarshare.png"
+    },
+    {
+      name: "Onggoshree",
+      subtitle: "অঙ্গশ্রী — Skincare E-commerce App",
+      description: "A full-stack skincare e-commerce app for a Bangladesh-based brand, featuring a React Native (Expo) mobile client, Node.js/Express/MongoDB backend, real Skin AI analysis, and a Glow Club loyalty program with atomic reward redemption.",
+      image: "/images/projects/onggoshree_app.png",
+      url: "https://expo.dev/artifacts/eas/E3AC8UD7v4ezfdnZxdOeTr3RZrNdyEAEHUWyErPus8A.apk",
+      tech: ["React Native", "Expo", "Node.js", "Express", "MongoDB", "JWT"]
     }
   ],
   education: [
