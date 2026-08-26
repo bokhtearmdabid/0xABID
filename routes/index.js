@@ -14,15 +14,15 @@ const portfolioData = {
     instagram: 'abix404',
     github: 'bokhtearmdabid'
   },
-  profile: 'Detail-oriented Web Developer and final-year Computer Science student with hands-on experience building responsive, scalable web applications using Django, Node.js, and modern front-end technologies. Skilled in REST API integration, authentication systems, database design, and deployment. Passionate about clean code, performance optimization, and delivering user-centric digital solutions.',
+  profile: "Web Developer and CSE graduate who builds and ships client-facing web applications with Django, Node.js, and modern JavaScript. I've designed databases, built authentication systems, and deployed full-stack projects end-to-end — from a blood donor platform serving live users to a real-time chat app with Firebase. Currently expanding into Shopify, eCommerce, and SEO to build more commercially-focused products.",
   skills: {
-    languages: ['Python (Advanced)', 'JavaScript' , 'C' , 'HTML5/CSS3'],
-    frameworks: ['Django', 'React', 'Bootstrap', 'Express'],
-    softwareEngineering: ['OOP', 'SDLC'],
-    dataManagement: ['SQL', 'Firebase'],
+    languages: ['Python', 'JavaScript', 'C', 'HTML5/CSS3'],
+    frameworks: ['Django', 'React', 'Node.js', 'Express', 'Bootstrap', 'Tailwind CSS'],
+    softwareEngineering: ['OOP', 'SDLC', 'Database Design', 'Responsive UI'],
+    dataManagement: ['MySQL', 'MongoDB', 'Firebase', 'Pandas', 'Scikit-learn'],
     versionControl: ['Git and GitHub'],
-    deployment: ['Render' , 'Vercel'],
-    connectivity: ['REST APIs']
+    deployment: ['Render', 'Vercel', 'Website Deployment'],
+    connectivity: ['RESTful APIs', 'Postman']
   },
   projects: [
     {
@@ -77,8 +77,8 @@ const portfolioData = {
       degree: 'B.Sc. in Computer Science & Engineering',
       institution: 'University of Asia Pacific, Dhaka',
       year: '2022-2026',
-      cgpa: '3.08',
-      status: '4th Year, Final Semester (Expected Graduation: 2026)'
+      cgpa: '3.13',
+      status: 'Graduated'
     },
     {
       degree: 'Higher Secondary Certificate',
