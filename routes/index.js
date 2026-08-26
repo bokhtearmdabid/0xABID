@@ -14,7 +14,7 @@ const portfolioData = {
     instagram: 'abix404',
     github: 'bokhtearmdabid'
   },
-  profile: "Web Developer and CSE graduate who builds and ships client-facing web applications with Django, Node.js, and modern JavaScript. I've designed databases, built authentication systems, and deployed full-stack projects end-to-end — from a blood donor platform serving live users to a real-time chat app with Firebase. Currently expanding into Shopify, eCommerce, and SEO to build more commercially-focused products.",
+  profile: "I'm a full-stack web developer and CSE graduate who loves building web apps that real people actually use. I work mainly with Django, Node.js, and modern JavaScript, and I enjoy the whole process — designing the database, setting up authentication, and shipping the project end-to-end. Some of my favorite builds so far are a blood donor platform that's currently serving live users, and a real-time chat app powered by Firebase. Right now, I'm diving into Shopify, eCommerce, and SEO so I can build more products with real commercial value.",
   skills: {
     languages: ['Python', 'JavaScript', 'C', 'HTML5/CSS3'],
     frameworks: ['Django', 'React', 'Node.js', 'Express', 'Bootstrap', 'Tailwind CSS'],
