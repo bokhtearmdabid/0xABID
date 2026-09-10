@@ -247,6 +247,11 @@ h1, h2, h3, h4, h5, h6 {
   animation: pulse 8s ease-in-out infinite;
 }
 
+footer {
+  background-color: var(--black);
+  opacity: 90%;
+}
+
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);

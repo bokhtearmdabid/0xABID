@@ -1,6 +1,9 @@
 <% const page = 'about'; const pageTitle = 'About'; %>
 <%- include('header') %>
 
+<link rel="stylesheet" href="/css/kinetic-grid.css">
+<canvas id="kinetic-grid" data-theme="monochrome"></canvas>
+
 <!-- About Section -->
 <section class="section pt-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,5 +135,7 @@
     </div>
   </div>
 </section>
+
+<script src="/js/kinetic-grid.js" defer></script>
 
 <%- include('footer') %>

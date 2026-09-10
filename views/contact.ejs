@@ -1,6 +1,9 @@
 <% const page = 'contact'; const pageTitle = 'Contact'; %>
 <%- include('header') %>
 
+<link rel="stylesheet" href="/css/kinetic-grid.css">
+<canvas id="kinetic-grid" data-theme="monochrome"></canvas>
+
 <style>
 /* Ensure form inputs are clickable and editable */
 #contactForm input,
@@ -304,5 +307,7 @@ document.querySelectorAll('.copy-email').forEach(element => {
   });
 });
 </script>
+
+<script src="/js/kinetic-grid.js" defer></script>
 
 <%- include('footer') %>
