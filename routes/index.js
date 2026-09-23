@@ -10,7 +10,7 @@ const portfolioData = {
     phone: '+8801628759989',
     email: 'bokhtearmdabid@gmail.com',
     address: '[Hidden], Azimpur, Dhaka-1205',
-    linkedin: 'bokhtear-md-abid-928459136',
+    linkedin: 'bokhtear-md-abid',
     instagram: 'abix404',
     github: 'bokhtearmdabid'
   },
@@ -199,7 +199,7 @@ router.post('/contact', async (req, res) => {
   }
 });
 
-// API endpoint to get portfolio data (optional - for future use)
+
 router.get('/api/portfolio', (req, res) => {
   res.json(portfolioData);
 });

@@ -44,14 +44,10 @@ app.use((err, req, res, next) => {
 // Start server
 app.listen(PORT, () => {
   console.log(`
-  ╔════════════════════════════════════════╗
-  ║   🚀 Server is running successfully!   ║
-  ╠════════════════════════════════════════╣
-  ║   Environment: ${process.env.NODE_ENV || 'development'}           ║
-  ║   Port: ${PORT}                          ║
-  ║   URL: http://localhost:${PORT}         ║
-  ╚════════════════════════════════════════╝
+    Server is running successfully!   
+    Environment: ${process.env.NODE_ENV || 'development'}
+    Port: ${PORT}                          
+    URL: http://localhost:${PORT}         
   `);
 });
-
 module.exports = app;
