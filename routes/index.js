@@ -5,7 +5,7 @@ const { sendEmail, createContactEmailTemplate } = require('../config/email');
 // Portfolio data
 const portfolioData = {
   name: 'Bokhtear Md Abid',
-  title: 'Full-Stack Web Developer',
+  title: 'Full-Stack Developer',
   contact: {
     phone: '+8801628759989',
     email: 'bokhtearmdabid@gmail.com',
@@ -14,7 +14,7 @@ const portfolioData = {
     instagram: 'abix404',
     github: 'bokhtearmdabid'
   },
-  profile: "I'm a full-stack web developer and CSE graduate who loves building web apps that real people actually use. I work mainly with Django, Node.js, and modern JavaScript, and I enjoy the whole process — designing the database, setting up authentication, and shipping the project end-to-end. Some of my favorite builds so far are a blood donor platform that's currently serving live users, and a real-time chat app powered by Firebase. Right now, I'm diving into Shopify, eCommerce, and SEO so I can build more products with real commercial value.",
+  profile: "I'm a full-stack developer and CSE graduate who loves building web apps that real people actually use. I work mainly with Django, Node.js, and modern JavaScript, and I enjoy the whole process — designing the database, setting up authentication, and shipping the project end-to-end. Some of my favorite builds so far are a blood donor platform that's currently serving live users, and a real-time chat app powered by Firebase. Right now, I'm diving into Shopify, eCommerce, and SEO so I can build more products with real commercial value.",
   skills: {
     languages: ['Python', 'JavaScript', 'C', 'HTML5/CSS3'],
     frameworks: ['Django', 'React', 'Node.js', 'Express', 'Bootstrap', 'Tailwind CSS'],
@@ -34,13 +34,13 @@ const portfolioData = {
       image: "/images/projects/roktodanbd.png"
     },
     {
-      name: 'Rannaghore Protidin',
-      subtitle: 'E-Commerce Web Platform',
-      url: 'https://rannaghore-protidin.onrender.com/',
-      description: 'Developed a fully functional e-commerce platform for selling baking supplies and household essentials. Includes user-friendly product browsing, cart system, order management, and responsive design for seamless shopping across devices.',
-      tech: ['Django', 'HTML5', 'CSS3', 'Neon SQL', 'Render'],
-      image: "/images/projects/rannaghoreprotidin.png"
-    },
+      name: "Onggoshree",
+      subtitle: "অঙ্গশ্রী — Skincare E-commerce App",
+      description: "A full-stack skincare e-commerce app for a Bangladesh-based brand, featuring a React Native (Expo) mobile client, Node.js/Express/MongoDB backend, real Skin AI analysis, and a Glow Club loyalty program with atomic reward redemption.",
+      image: "/images/projects/onggoshree_app.png",
+      url: "https://expo.dev/artifacts/eas/E3AC8UD7v4ezfdnZxdOeTr3RZrNdyEAEHUWyErPus8A.apk",
+      tech: ["React Native", "Expo", "Node.js", "Express", "MongoDB", "JWT"]
+    },   
     {
       name: 'HUMMI',
       subtitle: 'Social Communication App',
@@ -49,11 +49,19 @@ const portfolioData = {
       tech: ['TypeScript', 'React Native', 'Expo', 'Firebase', 'Firestore DB'],
       image: "/images/projects/hummi_app.png"
     },
-
+    {
+      name: "Catch The Eggs",
+      subtitle: "2D Arcade Game | C++ & OpenGL",
+      description: "Built a real-time 2D arcade game featuring animated chickens, dynamic egg spawning, power-ups, combo scoring, particle effects, and progressive difficulty. Designed the game loop, collision detection, input handling, animations, and real-time rendering using C++ with OpenGL and freeGLUT.",
+      image: "/images/projects/catchtheegg.jpg",
+      url: "https://github.com/bokhtearmdabid/Catch-The-Eggs-LT-1.0.0",
+      tech: ["C++", "OpenGL", "freeGLUT", "Game Loop", "Collision Detection"]
+    },
     {
       name: 'Prediction of Dengue Cases in Bangladesh',
       subtitle: 'Machine Learning & Python',
       description: 'Designed a predictive model to analyze historical data and forecast Dengue outbreaks in Bangladesh. Applied Machine Learning algorithms to identify trends, aiding in proactive public health measures.',
+      image: "/images/projects/dengueproject.png",
       tech: ['Python', 'Scikit-learn', 'Pandas', 'Data Visualization'],
     },
     {
@@ -64,14 +72,15 @@ const portfolioData = {
       image: "/images/projects/himaagarshare.png"
     },
     {
-      name: "Onggoshree",
-      subtitle: "অঙ্গশ্রী — Skincare E-commerce App",
-      description: "A full-stack skincare e-commerce app for a Bangladesh-based brand, featuring a React Native (Expo) mobile client, Node.js/Express/MongoDB backend, real Skin AI analysis, and a Glow Club loyalty program with atomic reward redemption.",
-      image: "/images/projects/onggoshree_app.png",
-      url: "https://expo.dev/artifacts/eas/E3AC8UD7v4ezfdnZxdOeTr3RZrNdyEAEHUWyErPus8A.apk",
-      tech: ["React Native", "Expo", "Node.js", "Express", "MongoDB", "JWT"]
-    }
+      name: 'Rannaghore Protidin',
+      subtitle: 'E-Commerce Web Platform',
+      url: 'https://rannaghore-protidin.onrender.com/',
+      description: 'Developed a fully functional e-commerce platform for selling baking supplies and household essentials. Includes user-friendly product browsing, cart system, order management, and responsive design for seamless shopping across devices.',
+      tech: ['Django', 'HTML5', 'CSS3', 'Neon SQL', 'Render'],
+      image: "/images/projects/rannaghoreprotidin.png"
+    },
   ],
+  
   education: [
     {
       degree: 'B.Sc. in Computer Science & Engineering',
