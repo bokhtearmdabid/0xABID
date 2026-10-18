@@ -40,6 +40,14 @@ const portfolioData = {
       image: "/images/projects/onggoshree_app.png",
       url: "https://expo.dev/artifacts/eas/E3AC8UD7v4ezfdnZxdOeTr3RZrNdyEAEHUWyErPus8A.apk",
       tech: ["React Native", "Expo", "Node.js", "Express", "MongoDB", "JWT"]
+    },
+    {
+      name: 'BunonAI',
+      subtitle: 'Multi-Agent AI Operations Manager',
+      url: 'https://github.com/bokhtearmdabid/BunonAI',
+      description: 'Built a virtual operations manager for small garment factories that reads daily production sheets and forecasts whether export orders will ship on time. Features include four specialized agents (Production, Quality, Supplier, Export Deadline), a data validator that blocks forecasts on stale or broken data, Bangla/English manager briefs, a visual dashboard, and WhatsApp alerts.',
+      tech: ['Python', 'pandas', 'Gemini API', 'WhatsApp Cloud API', 'JavaScript', 'HTML5', 'CSS3'],
+      image: "/images/projects/bunonai.jpg"
     },   
     {
       name: 'HUMMI',
