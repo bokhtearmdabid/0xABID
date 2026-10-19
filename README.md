@@ -1,6 +1,7 @@
-# 0xabid - Portfolio Website
-
-A modern, responsive portfolio website for Bokhtear Md Abid built with Node.js, Express, EJS, and Tailwind CSS.
+<div align="center">
+<h1>Bokhtear Md. Abid - Portfolio Website</h1>
+<h5>A modern, responsive portfolio website for Bokhtear Md Abid built with Node.js, Express, EJS, and Tailwind CSS.</h5>
+</div>
 
 ## 🎨 Features
 
