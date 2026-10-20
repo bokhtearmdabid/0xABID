@@ -1,0 +1,92 @@
+<% const page = 'research'; const pageTitle = 'Research'; %>
+<%- include('header') %>
+
+<link rel="stylesheet" href="/css/kinetic-grid.css">
+<canvas id="kinetic-grid" data-theme="monochrome"></canvas>
+
+<%
+  const published = (data.research || []).filter(r => r.status === 'published');
+  const ongoing   = (data.research || []).filter(r => r.status === 'ongoing');
+
+  const getDoiUrl = (doi) => {
+    if (!doi || !doi.trim()) return '';
+    return doi.startsWith('http') ? doi : 'https://doi.org/' + doi.trim();
+  };
+%>
+
+<section class="section pt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="section-title">My <span class="gradient-text">Research</span></h1>
+    <p class="text-gray-light mt-4 mb-12 max-w-3xl text-lg">
+      My published papers and the research I am currently working on.
+    </p>
+
+    <!-- Published -->
+    <h2 class="text-2xl font-bold mb-6">
+      <i class="fas fa-circle-check text-maroon-light mr-2"></i> Published
+    </h2>
+    <div class="grid grid-cols-1 <%= published.length > 1 ? 'lg:grid-cols-2' : '' %> gap-8 mb-16">
+      <% published.forEach((paper, index) => { %>
+        <%- include('research-card', { paper, index, doiUrl: getDoiUrl(paper.doi) }) %>
+      <% }); %>
+      <% if (published.length === 0) { %>
+        <p class="text-gray-light">No published papers yet.</p>
+      <% } %>
+    </div>
+
+    <!-- Ongoing -->
+    <h2 class="text-2xl font-bold mb-6">
+      <i class="fas fa-flask text-maroon-light mr-2"></i> Ongoing
+    </h2>
+    <div class="grid grid-cols-1 <%= ongoing.length > 1 ? 'lg:grid-cols-2' : '' %> gap-8">
+      <% ongoing.forEach((paper, index) => { %>
+        <%- include('research-card', { paper, index, doiUrl: getDoiUrl(paper.doi) }) %>
+      <% }); %>
+      <% if (ongoing.length === 0) { %>
+        <p class="text-gray-light">No ongoing research listed right now.</p>
+      <% } %>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="mt-16 text-center">
+      <p class="text-gray-light text-lg mb-4">Interested in research collaboration?</p>
+      <a href="/contact" class="btn-primary">Let's Talk</a>
+    </div>
+  </div>
+</section>
+
+<!-- Message popup -->
+<div id="research-toast" role="status" aria-live="polite"></div>
+
+<style>
+  #research-toast {
+    position: fixed; bottom: 100px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #1a1a1a; color: #fff;
+    border: 1px solid #800000; border-radius: 10px;
+    padding: 12px 20px; font-size: 14px; z-index: 2000;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .6);
+    opacity: 0; pointer-events: none; max-width: calc(100vw - 32px);
+    transition: opacity .25s, transform .25s;
+  }
+  #research-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+
+<script>
+  (function () {
+    const toast = document.getElementById('research-toast');
+    let timer;
+    document.querySelectorAll('.research-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        toast.textContent = btn.dataset.msg;  
+        toast.classList.add('show');
+        clearTimeout(timer);
+        timer = setTimeout(() => toast.classList.remove('show'), 2500);
+      });
+    });
+  })();
+</script>
+
+<script src="/js/kinetic-grid.js" defer></script>
+
+<%- include('footer') %>

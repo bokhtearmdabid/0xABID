@@ -114,8 +114,35 @@ const portfolioData = {
     'AI+ Prompt Engineer (AI CERTs)',
     'Flutter App Development'
   ],
-  languages: ['English (Advanced)', 'Bengali (Native)']
+  languages: ['English (Advanced)', 'Bengali (Native)'],
+
+  research: [
+        {
+      title: 'A Multi-Model Machine Learning Framework for Predicting Monthly Dengue Incidence in Bangladesh: A Comparative Analysis Using Climate Variables',
+      authors: 'Bokhtear Md. Abid, Md. Mukit Hasan, Israt Jahan, Alif Ruslan',
+      venue: 'IEEE 3rd International Conference on Computing, Applications and Systems (COMPAS 2026), University of Dhaka',
+      year: 2026,
+      status: 'published',
+      doi: '', 
+      note: 'The DOI link will be added once the paper is available on IEEE Xplore.',
+      code: 'https://github.com/bokhtearmdabid/A-Multi-Modal-Machine-Learning-Framework-for-Predicting-Monthly-Dengue-Incidence-in-Bangladesh',
+      abstract: 'Compares twelve forecasting models for monthly dengue cases in Bangladesh using climate data (2008-2025), with a leakage audit and a prospective test on the 2025 outbreak. A seasonal SARIMAX model performed best (RMSE about 3,060 cases, R² = 0.752), while tree-based models failed to extrapolate beyond the case counts seen in training.',
+      tags: ['Dengue Forecasting', 'SARIMAX', 'Time-Series', 'Machine Learning', 'Public Health']
+    },
+    {
+      title: 'AIN: A Zero-Cost AI-Powered Legal Assistant for Bangladesh Using Retrieval-Augmented Generation',
+      authors: 'Bokhtear Md Abid',
+      venue: 'Under preparation',
+      year: 2026,
+      status: 'ongoing',
+      doi: '',                        
+      note: 'This research is ongoing. Stay tuned!',  
+      abstract: 'Short description of what you are working on.',
+      tags: ['NLP']
+    }
+  ],
 };
+
 
 // Home Route
 router.get('/', (req, res) => {
@@ -156,6 +183,11 @@ router.get('/download/cv', (req, res) => {
       res.status(404).send('CV not found. Please add your CV file to public/cv/ directory.');
     }
   });
+});
+
+// Research Route
+router.get('/research', (req, res) => {
+  res.render('research', { data: portfolioData });
 });
 
 // Contact Form Submission
