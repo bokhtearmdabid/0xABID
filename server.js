@@ -4,6 +4,7 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.set('trust proxy', 1);
 
 // Middleware
 app.use(express.json());
@@ -18,6 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 const indexRoutes = require('./routes/index');
+const chatRoutes = require('./routes/chat'); 
+app.use('/api', chatRoutes);                    
 app.use('/', indexRoutes);
 
 // 404 Error Handler

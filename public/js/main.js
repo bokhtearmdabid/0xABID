@@ -134,3 +134,60 @@ emailLinks.forEach(link => {
     });
   });
 });
+
+(function () {
+  const toggle = document.getElementById('chat-toggle');
+  const box = document.getElementById('chat-box');
+  const closeBtn = document.getElementById('chat-close');
+  const messagesEl = document.getElementById('chat-messages');
+  const input = document.getElementById('chat-input');
+  const sendBtn = document.getElementById('chat-send');
+  if (!toggle) return;
+
+  const history = []; // the conversation memory
+
+  function addMessage(text, who) {
+    const div = document.createElement('div');
+    div.className = 'msg ' + who;
+    div.textContent = text; // textContent
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return div;
+  }
+
+  addMessage("Hi! 👋 I'm Abid's AI assistant. How can I help you?.", 'bot');
+
+  toggle.addEventListener('click', () => box.classList.toggle('hidden'));
+  closeBtn.addEventListener('click', () => box.classList.add('hidden'));
+
+  async function send() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMessage(text, 'user');
+    history.push({ role: 'user', content: text });
+    input.value = '';
+    sendBtn.disabled = true;
+    const typing = addMessage('Typing...', 'bot');
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history })
+      });
+      const data = await res.json();
+      typing.textContent = data.reply;
+      history.push({ role: 'assistant', content: data.reply });
+    } catch (e) {
+      typing.textContent = 'Connection error. Please try again.';
+      history.pop(); // remove the failed user message
+    } finally {
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  }
+
+  sendBtn.addEventListener('click', send);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter') send(); });
+})();
