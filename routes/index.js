@@ -16,14 +16,15 @@ const portfolioData = {
   },
   profile: "I'm a full-stack developer and CSE graduate who loves building web apps that real people actually use. I work mainly with Django, Node.js, and modern JavaScript, and I enjoy the whole process — designing the database, setting up authentication, and shipping the project end-to-end. Some of my favorite builds so far are a blood donor platform that's currently serving live users, and a real-time chat app powered by Firebase. Right now, I'm diving into Shopify, eCommerce, and SEO so I can build more products with real commercial value.",
   skills: {
-    languages: ['Python', 'JavaScript', 'C', 'HTML5/CSS3'],
-    frameworks: ['Django', 'React', 'Node.js', 'Express', 'Bootstrap', 'Tailwind CSS'],
-    softwareEngineering: ['OOP', 'SDLC', 'Database Design', 'Responsive UI'],
-    dataManagement: ['MySQL', 'MongoDB', 'Firebase', 'Pandas', 'Scikit-learn'],
-    versionControl: ['Git and GitHub'],
-    deployment: ['Render', 'Vercel', 'Website Deployment'],
-    connectivity: ['RESTful APIs', 'Postman']
-  },
+  languages: ['Python', 'JavaScript', 'TypeScript', 'C++', 'SQL', 'HTML5/CSS3'],
+  frameworks: ['Django', 'React Native', 'Expo (EAS)', 'Node.js', 'Express.js', 'React', 'Bootstrap', 'Tailwind CSS'],
+  aiAndLLM: ['API Integration', 'Multi-Agent Pipelines', 'AI Workflow Automation', 'Recommendation Engines', 'Hallucination Mitigation', 'Prompt Engineering'],
+  softwareEngineering: ['OOP', 'SDLC', 'Database Design', 'Debugging', 'Clean Code', 'Responsive UI'],
+  dataManagement: ['PostgreSQL', 'MongoDB', 'MySQL', 'Firebase', 'Pandas', 'Scikit-learn'],
+  versionControl: ['Git', 'GitHub'],
+  deployment: ['Vercel', 'Render', 'Netlify', 'CI/CD', 'Expo EAS (Android APK)'],
+  connectivity: ['RESTful APIs', 'Postman', 'JWT Authentication', 'Google Sign-In', 'Nodemailer']
+},
   projects: [
     {
       name: 'RoktoDan BD',
@@ -139,6 +140,26 @@ const portfolioData = {
       note: 'This research is ongoing. Stay tuned!',  
       abstract: 'Short description of what you are working on.',
       tags: ['NLP']
+    },   
+    {
+      title: 'Performance Evaluation of a Cost-Effective, MQTT-Optimized Secure Smart Home Architecture Utilizing Whitelisting and Scripted Microcontrollers',
+      authors: 'Bokhtear Md Abid',
+      venue: 'Journal of Computer Networks and Communications',
+      year: 2026,
+      status: 'ongoing',
+      doi: '',
+      note: 'Manuscript submitted for peer review. The DOI will be added if the paper is accepted and published.',
+      code: '',
+      abstract: 'Designs and evaluates a secure, cost-effective IoT-based smart home architecture using Cisco Packet Tracer 8.2. The system integrates 33 IoT devices with Python-scripted microcontrollers, WPA2-Enterprise authentication via a RADIUS server, MAC address whitelisting, and firewall rules. Simulation results demonstrate effective access control, with unauthorized connection attempts blocked and network response times ranging from 2.3 ms to 9.5 ms as the number of devices increases from 5 to 35. The study also examines MQTT protocol efficiency for bandwidth-conscious smart home automation.',
+      tags: [
+        'Internet of Things (IoT)',
+        'Smart Home Automation',
+        'MQTT',
+        'Network Security',
+        'Cisco Packet Tracer',
+        'WPA2-Enterprise',
+        'Python Automation'
+      ]
     }
   ],
 };

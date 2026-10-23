@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'Portfolio' %> - Bokhtear Md Abid</title>
-  <meta name="description" content="Portfolio of Bokhtear Md Abid - Full-Stack Developer">
+  <title><%= typeof pageTitle !== 'undefined' ? pageTitle + ' | Bokhtear Md Abid' : 'Bokhtear Md Abid | Full-Stack Developer' %></title>
+  <meta name="description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Bokhtear Md Abid is a full-stack developer and CSE graduate from Dhaka, Bangladesh, building web and mobile apps with Django, Node.js & React Native.' %>">
+  <link rel="canonical" href="https://bokhtearmdabid.vercel.app<%= typeof page !== 'undefined' && page !== 'home' ? '/' + page : '/' %>">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bokhtear Md Abid">
+  <meta property="og:title" content="<%= typeof pageTitle !== 'undefined' ? pageTitle + ' | Bokhtear Md Abid' : 'Bokhtear Md Abid | Full-Stack Developer' %>">
+  <meta property="og:description" content="Full-stack developer from Dhaka, Bangladesh.">
+  <meta property="og:image" content="https://bokhtearmdabid.vercel.app/images/profile.jpg">
+  <meta property="og:url" content="https://bokhtearmdabid.vercel.app<%= typeof page !== 'undefined' && page !== 'home' ? '/' + page : '/' %>">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,6 +22,26 @@
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <% if (typeof page !== 'undefined' && page === 'home') { %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bokhtear Md Abid",
+    "alternateName": ["Bokhtear Md. Abid", "Abid", "0xABID", "abix404"],
+    "url": "https://bokhtearmdabid.vercel.app/",
+    "image": "https://bokhtearmdabid.vercel.app/images/profile.jpg",
+    "jobTitle": "Full-Stack & AI Developer",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Asia Pacific" },
+    "sameAs": [
+      "https://linkedin.com/in/bokhtear-md-abid",
+      "https://github.com/bokhtearmdabid",
+      "https://instagram.com/abix404"
+    ]
+  }
+  </script>
+  <% } %>
 </head>
 <body>
   <!-- Navbar -->
